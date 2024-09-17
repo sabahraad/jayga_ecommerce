@@ -7,7 +7,7 @@
 		<meta name="author" content="Themezhub" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-        <title>Kumo- Fashion eCommerce HTML Template</title>
+        <title>Jayga eCommerce </title>
 		 
         <!-- Custom CSS -->
         <link href="{{asset('css/styles.css')}}" rel="stylesheet">
@@ -35,7 +35,7 @@
 					<nav id="navigation" class="navigation navigation-landscape">
 						<div class="nav-header">
 							<a class="nav-brand" href="#">
-								<img src="assets/img/logo.png" class="logo" alt="" />
+								Jayga Ecommerce
 							</a>
 							<div class="nav-toggle"></div>
 							<div class="mobile_nav">
@@ -67,68 +67,22 @@
 							<ul class="nav-menu">
 							
 								<li><a href="#">Home</a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="index.html">Home 1</a></li>
-										<li><a href="home-2.html">Home 2</a></li>
-										<li><a href="home-3.html">Home 3</a></li>
-										<li><a href="home-4.html">Home 4</a></li>
-										<li><a href="home-5.html">Home 5</a></li>
-										<li><a href="home-6.html">Home 6</a></li>
-										<li><a href="home-7.html">Home 7</a></li>
-										<li><a href="home-8.html">Home 8</a></li>
-										<li><a href="home-9.html">Home 9</a></li>
-										<li><a href="home-10.html">Home 10</a></li>
-									</ul>
+									
 								</li>
 								
 								<li><a href="javascript:void(0);">Shop</a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="javascript:void(0);">Account Dashboard</a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="my-orders.html">My Order</a></li>
-												<li><a href="wishlist.html">Wishlist</a></li>
-												<li><a href="profile-info.html">Profile Info</a></li>
-												<li><a href="addresses.html">Addresses</a></li>
-												<li><a href="payment-methode.html">Payment Methode</a></li>
-											</ul>
-										</li>
-										<li><a href="javascript:void(0);">Support</a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="shoping-cart.html">Shopping Cart</a></li>
-												<li><a href="checkout.html">Checkout</a></li>
-												<li><a href="complete-order.html">Order Complete</a></li>
-											</ul>
-										</li>
-										<li><a href="shop-style-1.html">Shop Style 01</a></li>
-										<li><a href="shop-style-2.html">Shop Style 02</a></li>
-										<li><a href="shop-style-3.html">Shop Style 03</a></li>
-										<li><a href="shop-style-4.html">Shop Style 04</a></li>
-										<li><a href="shop-style-5.html">Shop Style 05</a></li>
-										<li><a href="shop-list-view.html">Shop List Style</a></li>
-									</ul>
+									
 								</li>
 								
 								<li><a href="javascript:void(0);">Product</a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="shop-single-v1.html">Product Detail v01</a></li>
-										<li><a href="shop-single-v2.html">Product Detail v02</a></li>
-										<li><a href="shop-single-v3.html">Product Detail v03</a></li>
-										<li><a href="shop-single-v4.html">Product Detail v04</a></li>
-									</ul>
+									
 								</li>
 								
 								<li><a href="javascript:void(0);">Pages</a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="blog.html">Blog Style</a></li>
-										<li><a href="about-us.html">About Us</a></li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="404.html">404 Page</a></li>
-										<li><a href="privacy.html">Privacy Policy</a></li>
-										<li><a href="faq.html">FAQs</a></li>
-									</ul>
+									
 								</li>
 								
-								<li><a href="docs.html">Docs</a></li>
+								<li><a href="{{route('addProduct')}}">Add Product</a></li>
 								
 							</ul>
 							
@@ -168,52 +122,22 @@
 			<section class="p-0">
 				<div class="container-fluid p-0">
 					<div class="row no-gutters">
-					
+						@foreach($category as $cat)
 						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
 							<a href="#" class="card card-overflow card-scale no-radius mb-0">
-							<div class="bg-image" style="background:url(assets/img/a-1.png)no-repeat;" data-overlay="2"></div>
+							<div class="bg-image" style="background-image: url('{{ asset('img/a-1.png') }}');" data-overlay="2"></div>
 								<div class="ct_body">
 									<div class="ct_body_caption">	
-										<h1 class="mb-0 ft-bold text-light">Mens</h1>
+										<h1 class="mb-0 ft-bold text-light">{{$cat->name ?? N/A}}</h1>
 									</div>
 									<div class="ct_footer">
-										<span class="btn btn-white stretched-link">Shop Mens <i class="lni lni-arrow-right"></i>
+										<span class="btn btn-white stretched-link">Shop {{$cat->name ?? N/A}} <i class="lni lni-arrow-right"></i>
 										</span>
 									</div>
 								</div>
 							</a>
 						</div>
-						
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-							<a href="#" class="card card-overflow card-scale no-radius mb-0">
-							<div class="bg-image" style="background:url(assets/img/a-2.png)no-repeat;" data-overlay="2"></div>
-								<div class="ct_body">
-									<div class="ct_body_caption">	
-										<h1 class="mb-0 ft-bold text-light">Kids</h1>
-									</div>
-									<div class="ct_footer">
-										<span class="btn btn-white stretched-link">Shop Kids <i class="lni lni-arrow-right"></i>
-										</span>
-									</div>
-								</div>
-							</a>
-						</div>
-						
-						<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-							<a href="#" class="card card-overflow card-scale no-radius mb-0">
-							<div class="bg-image" style="background:url(assets/img/a-3.png)no-repeat;" data-overlay="2"></div>
-								<div class="ct_body">
-									<div class="ct_body_caption">	
-										<h1 class="mb-0 ft-bold text-light">Womens</h1>
-									</div>
-									<div class="ct_footer">
-										<span class="btn btn-white stretched-link">Shop Womens <i class="lni lni-arrow-right"></i>
-										</span>
-									</div>
-								</div>
-							</a>
-						</div>
-						
+						@endforeach
 					</div>
 				</div>
 			</section>
@@ -226,7 +150,6 @@
 					<div class="row justify-content-center">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 							<div class="sec_title position-relative text-center">
-								<h2 class="off_title">Trendy Products</h2>
 								<h3 class="ft-bold pt-3">Our Trending Products</h3>
 							</div>
 						</div>
@@ -234,7 +157,7 @@
 					
 					<!-- row -->
 					<div class="row align-items-center rows-products">
-					
+						@foreach ($data as $item)
 						<!-- Single -->
 						<div class="col-xl-3 col-lg-4 col-md-6 col-6">
 							<div class="product_grid card b-0">
@@ -242,7 +165,7 @@
 								<button class="btn btn_love position-absolute ab-right snackbar-wishlist"><i class="far fa-heart"></i></button> 
 								<div class="card-body p-0">
 									<div class="shop_thumb position-relative">
-										<a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img class="card-img-top" src="assets/img/product/1.jpg" alt="..."></a>
+										<a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img class="card-img-top" src="{{asset($item->image)}}" alt="..."></a>
 										<div class="product-hover-overlay bg-dark d-flex align-items-center justify-content-center">
 											<div class="edlio"><a href="#" data-toggle="modal" data-target="#quickview" class="text-white fs-sm ft-medium"><i class="fas fa-eye mr-1"></i>Quick View</a></div>
 										</div>
@@ -251,189 +174,128 @@
 								<div class="card-footers b-0 pt-3 px-2 bg-white d-flex align-items-start justify-content-center">
 									<div class="text-left">
 										<div class="text-center">
-											<h5 class="fw-bolder fs-md mb-0 lh-1 mb-1"><a href="shop-single-v1.html">Half Running Set</a></h5>
-											<div class="elis_rty"><span class="ft-bold fs-md text-dark">$119.00</span></div>
+											<h5 class="fw-bolder fs-md mb-0 lh-1 mb-1"><a href="shop-single-v1.html">{{$item->name ?? N/A}}</a></h5>
+											<div class="elis_rty"><span class="ft-bold fs-md text-dark">{{$item->price ?? N/A}}</span></div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						
-						<!-- Single -->
-						<div class="col-xl-3 col-lg-4 col-md-6 col-6">
-							<div class="product_grid card b-0">
-								<div class="badge bg-info text-white position-absolute ft-regular ab-left text-upper">New</div>
-								<button class="btn btn_love position-absolute ab-right snackbar-wishlist"><i class="far fa-heart"></i></button> 
-								<div class="card-body p-0">
-									<div class="shop_thumb position-relative">
-										<a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img class="card-img-top" src="assets/img/product/2.jpg" alt="..."></a>
-										<div class="product-hover-overlay bg-dark d-flex align-items-center justify-content-center">
-											<div class="edlio"><a href="#" data-toggle="modal" data-target="#quickview" class="text-white fs-sm ft-medium"><i class="fas fa-eye mr-1"></i>Quick View</a></div>
-										</div>
+						<!-- Product View Modal -->
+						<div class="modal fade lg-modal" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickviewmodal" aria-hidden="true">
+							<div class="modal-dialog modal-xl login-pop-form" role="document">
+								<div class="modal-content" id="quickviewmodal">
+									<div class="modal-headers">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span class="ti-close"></span>
+										</button>
 									</div>
-								</div>
-								<div class="card-footers b-0 pt-3 px-2 bg-white d-flex align-items-start justify-content-center">
-									<div class="text-left">
-										<div class="text-center">
-											<h5 class="fw-bolder fs-md mb-0 lh-1 mb-1"><a href="shop-single-v1.html">Formal Men Lowers</a></h5>
-											<div class="elis_rty"><span class="text-muted ft-medium line-through mr-2">$129.00</span><span class="ft-bold theme-cl fs-md">$79.00</span></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Single -->
-						<div class="col-xl-3 col-lg-4 col-md-6 col-6">
-							<div class="product_grid card b-0">
-								<button class="btn btn_love position-absolute ab-right snackbar-wishlist"><i class="far fa-heart"></i></button> 
-								<div class="card-body p-0">
-									<div class="shop_thumb position-relative">
-										<a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img class="card-img-top" src="assets/img/product/3.jpg" alt="..."></a>
-										<div class="product-hover-overlay bg-dark d-flex align-items-center justify-content-center">
-											<div class="edlio"><a href="#" data-toggle="modal" data-target="#quickview" class="text-white fs-sm ft-medium"><i class="fas fa-eye mr-1"></i>Quick View</a></div>
-										</div>
-									</div>
-								</div>
-								<div class="card-footers b-0 pt-3 px-2 bg-white d-flex align-items-start justify-content-center">
-									<div class="text-left">
-										<div class="text-center">
-											<h5 class="fw-bolder fs-md mb-0 lh-1 mb-1"><a href="shop-single-v1.html">Half Running Suit</a></h5>
-											<div class="elis_rty"><span class="ft-bold fs-md text-dark">$80.00</span></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Single -->
-						<div class="col-xl-3 col-lg-4 col-md-6 col-6">
-							<div class="product_grid card b-0">
-								<div class="badge bg-warning text-white position-absolute ft-regular ab-left text-upper">Hot</div>
-								<button class="btn btn_love position-absolute ab-right snackbar-wishlist"><i class="far fa-heart"></i></button> 
-								<div class="card-body p-0">
-									<div class="shop_thumb position-relative">
-										<a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img class="card-img-top" src="assets/img/product/4.jpg" alt="..."></a>
-										<div class="product-hover-overlay bg-dark d-flex align-items-center justify-content-center">
-											<div class="edlio"><a href="#" data-toggle="modal" data-target="#quickview" class="text-white fs-sm ft-medium"><i class="fas fa-eye mr-1"></i>Quick View</a></div>
-										</div>
-									</div>
-								</div>
-								<div class="card-footers b-0 pt-3 px-2 bg-white d-flex align-items-start justify-content-center">
-									<div class="text-left">
-										<div class="text-center">
-											<h5 class="fw-bolder fs-md mb-0 lh-1 mb-1"><a href="shop-single-v1.html">Half Fancy Lady Dress</a></h5>
-											<div class="elis_rty"><span class="text-muted ft-medium line-through mr-2">$149.00</span><span class="ft-bold theme-cl fs-md">$110.00</span></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Single -->
-						<div class="col-xl-3 col-lg-4 col-md-6 col-6">
-							<div class="product_grid card b-0">
-								<button class="btn btn_love position-absolute ab-right snackbar-wishlist"><i class="far fa-heart"></i></button> 
-								<div class="card-body p-0">
-									<div class="shop_thumb position-relative">
-										<a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img class="card-img-top" src="assets/img/product/5.jpg" alt="..."></a>
-										<div class="product-hover-overlay bg-dark d-flex align-items-center justify-content-center">
-											<div class="edlio"><a href="#" data-toggle="modal" data-target="#quickview" class="text-white fs-sm ft-medium"><i class="fas fa-eye mr-1"></i>Quick View</a></div>
-										</div>
-									</div>
-								</div>
-								<div class="card-footers b-0 pt-3 px-2 bg-white d-flex align-items-start justify-content-center">
-									<div class="text-left">
-										<div class="text-center">
-											<h5 class="fw-bolder fs-md mb-0 lh-1 mb-1"><a href="shop-single-v1.html">Flix Flox Jeans</a></h5>
-											<div class="elis_rty"><span class="text-muted ft-medium line-through mr-2">$90.00</span><span class="ft-bold theme-cl fs-md">$49.00</span></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Single -->
-						<div class="col-xl-3 col-lg-4 col-md-6 col-6">
-							<div class="product_grid card b-0">
-								<div class="badge bg-danger text-white position-absolute ft-regular ab-left text-upper">Hot</div>
-								<button class="btn btn_love position-absolute ab-right snackbar-wishlist"><i class="far fa-heart"></i></button> 
-								<div class="card-body p-0">
-									<div class="shop_thumb position-relative">
-										<a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img class="card-img-top" src="assets/img/product/6.jpg" alt="..."></a>
-										<div class="product-hover-overlay bg-dark d-flex align-items-center justify-content-center">
-											<div class="edlio"><a href="#" data-toggle="modal" data-target="#quickview" class="text-white fs-sm ft-medium"><i class="fas fa-eye mr-1"></i>Quick View</a></div>
-										</div>
-									</div>
-								</div>
-								<div class="card-footers b-0 pt-3 px-2 bg-white d-flex align-items-start justify-content-center">
-									<div class="text-left">
-										<div class="text-center">
-											<h5 class="fw-bolder fs-md mb-0 lh-1 mb-1"><a href="shop-single-v1.html">Fancy Salwar Suits</a></h5>
-											<div class="elis_rty"><span class="ft-bold fs-md text-dark">$114.00</span></div>
+								
+									<div class="modal-body">
+										<div class="quick_view_wrap">
+								
+											<div class="quick_view_thmb">
+												<div class="quick_view_slide">
+													<div class="single_view_slide"><img src="{{asset($item->image)}}" class="img-fluid" alt="" /></div>
+												
+												</div>
+											</div>
+											
+											<div class="quick_view_capt">
+												<div class="prd_details">
+													
+													<div class="prt_01 mb-1"><span class="text-light bg-info rounded px-2 py-1">{{$item->category->name ?? N/A}}</span></div>
+													<div class="prt_02 mb-2">
+														<h2 class="ft-bold mb-1">{{$item->name}}</h2>
+														<div class="text-left">
+															<div class="star-rating align-items-center d-flex justify-content-left mb-1 p-0">
+																<i class="fas fa-star filled"></i>
+																<i class="fas fa-star filled"></i>
+																<i class="fas fa-star filled"></i>
+																<i class="fas fa-star filled"></i>
+																<i class="fas fa-star"></i>
+																<span class="small">(412 Reviews)</span>
+															</div>
+															<div class="elis_rty"><span class="ft-medium text-muted line-through fs-md mr-2">${{$item->price ?? N/A}}</span><span class="ft-bold theme-cl fs-lg mr-2">${{$item->price ?? N/A}}</span><span class="ft-regular text-danger bg-light-danger py-1 px-2 fs-sm">Out of Stock</span></div>
+														</div>
+													</div>
+													
+													<div class="prt_03 mb-3">
+														<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+													</div>
+													
+													<div class="prt_04 mb-4">
+														
+														@foreach($item->attributes as $attributes)
+														<p class="d-flex align-items-center mb-0 text-dark ft-medium">{{$attributes->name ?? N/A}}:</p>
+														
+														<div class="text-left pb-0 pt-2">
+															<div class="form-check size-option form-option form-check-inline mb-2">
+																<input class="form-check-input" type="radio" name="size" id="28" checked="">
+																@foreach($item->attributeValues as $value)
+																	@if($value->attribute_id === $attributes->id)
+																		<label class="form-option-label" for="28">{{ $value->value ?? N/A }}</label>
+																	@endif
+																@endforeach
+															</div>
+														</div>
+														@endforeach
+													</div>
+													
+													<div class="prt_05 mb-4">
+														<div class="form-row mb-7">
+															<div class="col-12 col-lg-auto">
+																<!-- Quantity -->
+																<select class="mb-2 custom-select">
+																<option value="1" selected="">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+																</select>
+															</div>
+															<div class="col-12 col-lg">
+																<!-- Submit -->
+																<button type="submit" class="btn btn-block custom-height bg-dark mb-2">
+																	<i class="lni lni-shopping-basket mr-2"></i>Add to Cart 
+																</button>
+															</div>
+															<div class="col-12 col-lg-auto">
+																<!-- Wishlist -->
+																<button class="btn custom-height btn-default btn-block mb-2 text-dark" data-toggle="button">
+																	<i class="lni lni-heart mr-2"></i>Wishlist
+																</button>
+															</div>
+													</div>
+													</div>
+													
+													<div class="prt_06">
+														<p class="mb-0 d-flex align-items-center">
+														<span class="mr-4">Share:</span>
+														<a class="d-inline-flex align-items-center justify-content-center p-3 gray circle fs-sm text-muted mr-2" href="#!">
+															<i class="fab fa-twitter position-absolute"></i>
+														</a>
+														<a class="d-inline-flex align-items-center justify-content-center p-3 gray circle fs-sm text-muted mr-2" href="#!">
+															<i class="fab fa-facebook-f position-absolute"></i>
+														</a>
+														<a class="d-inline-flex align-items-center justify-content-center p-3 gray circle fs-sm text-muted" href="#!">
+															<i class="fab fa-pinterest-p position-absolute"></i>
+														</a>
+														</p>
+													</div>
+													
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						
-						<!-- Single -->
-						<div class="col-xl-3 col-lg-4 col-md-6 col-6">
-							<div class="product_grid card b-0">
-								<div class="badge bg-success text-white position-absolute ft-regular ab-left text-upper">Sale</div>
-								<button class="btn btn_love position-absolute ab-right snackbar-wishlist"><i class="far fa-heart"></i></button> 
-								<div class="card-body p-0">
-									<div class="shop_thumb position-relative">
-										<a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img class="card-img-top" src="assets/img/product/7.jpg" alt="..."></a>
-										<div class="product-hover-overlay bg-dark d-flex align-items-center justify-content-center">
-											<div class="edlio"><a href="#" data-toggle="modal" data-target="#quickview" class="text-white fs-sm ft-medium"><i class="fas fa-eye mr-1"></i>Quick View</a></div>
-										</div>
-									</div>
-								</div>
-								<div class="card-footers b-0 pt-3 px-2 bg-white d-flex align-items-start justify-content-center">
-									<div class="text-left">
-										<div class="text-center">
-											<h5 class="fw-bolder fs-md mb-0 lh-1 mb-1"><a href="shop-single-v1.html">Collot Full Dress</a></h5>
-											<div class="elis_rty"><span class="ft-bold theme-cl fs-md text-dark">$120.00</span></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Single -->
-						<div class="col-xl-3 col-lg-4 col-md-6 col-6">
-							<div class="product_grid card b-0">
-								<button class="btn btn_love position-absolute ab-right snackbar-wishlist"><i class="far fa-heart"></i></button> 
-								<div class="card-body p-0">
-									<div class="shop_thumb position-relative">
-										<a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img class="card-img-top" src="assets/img/product/8.jpg" alt="..."></a>
-										<div class="product-hover-overlay bg-dark d-flex align-items-center justify-content-center">
-											<div class="edlio"><a href="#" data-toggle="modal" data-target="#quickview" class="text-white fs-sm ft-medium"><i class="fas fa-eye mr-1"></i>Quick View</a></div>
-										</div>
-									</div>
-								</div>
-								<div class="card-footers b-0 pt-3 px-2 bg-white d-flex align-items-start justify-content-center">
-									<div class="text-left">
-										<div class="text-center">
-											<h5 class="fw-bolder fs-md mb-0 lh-1 mb-1"><a href="shop-single-v1.html">Formal Fluex Kurti</a></h5>
-											<div class="elis_rty"><span class="text-muted ft-medium line-through mr-2">$149.00</span><span class="ft-bold theme-cl fs-md">$129.00</span></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
+						<!-- End Modal -->
+						@endforeach
+
 					</div>
 					<!-- row -->
-					
-					<div class="row justify-content-center">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-							<div class="position-relative text-center">
-								<a href="shop-style-1.html" class="btn stretched-link borders">Explore More<i class="lni lni-arrow-right ml-2"></i></a>
-							</div>
-						</div>
-					</div>
 					
 				</div>
 			</section>
@@ -446,7 +308,6 @@
 					<div class="row justify-content-center">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 							<div class="sec_title position-relative text-center">
-								<h2 class="off_title">Testimonials</h2>
 								<h3 class="ft-bold pt-3">Client Reviews</h3>
 							</div>
 						</div>
@@ -526,7 +387,6 @@
 					<div class="row justify-content-center">
 						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 							<div class="sec_title position-relative text-center">
-								<h2 class="off_title">Latest News</h2>
 								<h3 class="ft-bold pt-3">New Updates</h3>
 							</div>
 						</div>
@@ -581,85 +441,6 @@
 				</div>
 			</section>
 			<!-- ======================= Blog Start ============================ -->
-			
-			<!-- ======================= Instagram Start ============================ -->
-			<section class="p-0">
-				<div class="container-fluid p-0">
-					
-					<div class="row no-gutters">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-							<div class="sec_title position-relative text-center">
-								<h2 class="off_title">Instagram Gallery</h2>
-								<span class="fs-lg ft-bold theme-cl pt-3">@mahak_71</span>
-								<h3 class="ft-bold lh-1">From Instagram</h3>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row no-gutters">
-						
-						<div class="col">
-							<div class="_insta_wrap">
-								<div class="_insta_thumb">
-									<a href="javascript:void(0);" class="d-block"><img src="assets/img/i-1.png" class="img-fluid" alt="" /></a>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="_insta_wrap">
-								<div class="_insta_thumb">
-									<a href="javascript:void(0);" class="d-block"><img src="assets/img/i-2.png" class="img-fluid" alt="" /></a>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="_insta_wrap">
-								<div class="_insta_thumb">
-									<a href="javascript:void(0);" class="d-block"><img src="assets/img/i-3.png" class="img-fluid" alt="" /></a>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="_insta_wrap">
-								<div class="_insta_thumb">
-									<a href="javascript:void(0);" class="d-block"><img src="assets/img/i-7.png" class="img-fluid" alt="" /></a>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="_insta_wrap">
-								<div class="_insta_thumb">
-									<a href="javascript:void(0);" class="d-block"><img src="assets/img/i-8.png" class="img-fluid" alt="" /></a>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="_insta_wrap">
-								<div class="_insta_thumb">
-									<a href="javascript:void(0);" class="d-block"><img src="assets/img/i-4.png" class="img-fluid" alt="" /></a>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="_insta_wrap">
-								<div class="_insta_thumb">
-									<a href="javascript:void(0);" class="d-block"><img src="assets/img/i-5.png" class="img-fluid" alt="" /></a>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="_insta_wrap">
-								<div class="_insta_thumb">
-									<a href="javascript:void(0);" class="d-block"><img src="assets/img/i-6.png" class="img-fluid" alt="" /></a>
-								</div>
-							</div>
-						</div>
-						
-					</div>
-					
-				</div>
-			</section>
-			<!-- ======================= Instagram Start ============================ -->
 			
 			<!-- ======================= Customer Features ======================== -->
 			<section class="px-0 py-3 br-top">
@@ -727,7 +508,7 @@
 							
 							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
 								<div class="footer_widget">
-									<img src="assets/img/logo-light.png" class="img-footer small mb-2" alt="" />
+									<h2 style="color :aliceblue">Jayga Ecommercce</h2>
 									
 									<div class="address mt-3">
 										3298 Grant Street Longview, TX<br>United Kingdom 75601	
@@ -813,7 +594,7 @@
 					<div class="container">
 						<div class="row align-items-center">
 							<div class="col-lg-12 col-md-12 text-center">
-								<p class="mb-0">© 2021 Kumo. Designd By <a href="https://themezhub.com/">ThemezHub</a>.</p>
+								<p class="mb-0">© 2024 Jayga Ecmmerce. Designd By Sabah Raad.</p>
 							</div>
 						</div>
 					</div>
@@ -981,57 +762,6 @@
 			</div>
 			<!-- End Modal -->
 			
-			<!-- Log In Modal -->
-			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="loginmodal" aria-hidden="true">
-				<div class="modal-dialog modal-xl login-pop-form" role="document">
-					<div class="modal-content" id="loginmodal">
-						<div class="modal-headers">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							  <span class="ti-close"></span>
-							</button>
-						  </div>
-					
-						<div class="modal-body p-5">
-							<div class="text-center mb-4">
-								<h2 class="m-0 ft-regular">Login</h2>
-							</div>
-							
-							<form>				
-								<div class="form-group">
-									<label>User Name</label>
-									<input type="text" class="form-control" placeholder="Username*">
-								</div>
-								
-								<div class="form-group">
-									<label>Password</label>
-									<input type="password" class="form-control" placeholder="Password*">
-								</div>
-								
-								<div class="form-group">
-									<div class="d-flex align-items-center justify-content-between">
-										<div class="flex-1">
-											<input id="dd" class="checkbox-custom" name="dd" type="checkbox">
-											<label for="dd" class="checkbox-custom-label">Remember Me</label>
-										</div>	
-										<div class="eltio_k2">
-											<a href="#">Lost Your Password?</a>
-										</div>	
-									</div>
-								</div>
-								
-								<div class="form-group">
-									<button type="submit" class="btn btn-md full-width bg-dark text-light fs-md ft-medium">Login</button>
-								</div>
-								
-								<div class="form-group text-center mb-0">
-									<p class="extra">Not a member?<a href="#et-register-wrap" class="text-dark"> Register</a></p>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- End Modal -->
 			
 			<!-- Search -->
 			<div class="w3-ch-sideBar w3-bar-block w3-card-2 w3-animate-right" style="display:none;right:0;" id="Search">

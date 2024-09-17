@@ -112,7 +112,6 @@ class ProductController extends Controller
      */
     public function update(Request $request,$id)
     {
-        dd($request);
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
@@ -145,16 +144,18 @@ class ProductController extends Controller
 
         $product->update($request->only('name', 'price', 'category_id',$imagePath));
 
-        // Update the product's attributes
-        $attributeValues = [];
-        if ($request->has('attributes')) {
-            foreach ($request->input('attributes') as $attribute) {
-                foreach ($attribute['values'] as $valueId) {
-                    $attributeValues[$valueId] = ['attribute_id' => $attribute['id']];
-                }
+        // Delete old attribute-value pairs
+        DB::table('product_attribute_value')->where('product_id', $product->id)->delete();
+
+        // Insert new attribute-value pairs
+        foreach ($request->input('attributes') as $attribute) {
+            foreach ($attribute['values'] as $value) {
+                DB::table('product_attribute_value')->insert([
+                    'product_id' => $product->id,
+                    'attribute_id' => $attribute['id'],
+                    'attribute_value_id' => $value
+                ]);
             }
-            // Sync the attribute values with the product
-            $product->attributes()->sync($attributeValues);
         }
 
         $data = Product::with('category', 'attributes','attributeValues')->find($id);

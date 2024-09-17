@@ -17,3 +17,9 @@ Route::get('/', function () {
 });
 
 Route::get('/index', [App\Http\Controllers\indexController::class, 'index']);
+Route::get('/addProduct', [App\Http\Controllers\indexController::class, 'addProduct'])->name('addProduct');
+Route::get('/addCategory', [App\Http\Controllers\indexController::class, 'addCategory'])->name('addCategory');
+Route::post('/storeCategory', [App\Http\Controllers\indexController::class, 'storeCategory'])->name('storeCategory');
+Route::get('/showCategory', [App\Http\Controllers\indexController::class, 'showCategory'])->name('showCategory');
+
+
